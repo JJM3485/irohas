@@ -48,3 +48,18 @@ body{
   /*background-size: 700px 500px;
   background: color || image || repeat || attachment || position*/
 }
+
+.middle{
+	text-align: center;
+}
+
+
+.btn{
+  background-color:skyblue;
+  color: white;
+  padding: 50px 100px;
+	display:inline-block;
+  position: relative;
+  top: 700px;
+  left: 10px;
+}
