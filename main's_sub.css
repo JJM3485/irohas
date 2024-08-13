@@ -41,15 +41,33 @@
 호감도가 일정 이상되면 굿엔딩 150이상
 */
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto; /* 기본 스크롤 설정 */
+  min-width: 1800px;
+  min-height: 850px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+
+}
+
 body{
   background-image: url(배경화면.png);
   background-attachment: fixed;
   background-size: cover;
+  justify-content: center;
+  display: flex;
+  align-items: center;
   /*background-size: 700px 500px;
   background: color || image || repeat || attachment || position*/
 }
 
 .middle{
+  position: absolute;
 	text-align: center;
 }
 
@@ -60,6 +78,40 @@ body{
   padding: 50px 100px;
 	display:inline-block;
   position: relative;
-  top: 700px;
-  left: 10px;
+  top: 300px;
 }
+
+.gamebox{
+  position: absolute;
+  width: 1800px;
+  height: 850px;
+  background-color: white ;
+  background-image: url(classroom.jpg);
+  background-size: cover;
+}
+
+.like{
+  font-size: 80%;
+  color: red;
+  font-weight: 700;
+}
+
+.textbox{
+  width: 1600px;
+  height: 210px;
+  background-color: plum;
+  position: absolute;
+  bottom: 0;
+  left: 6%;
+  background-size: cover;
+}
+
+.ch{
+  position: absolute;
+  bottom: 0;
+  height: 600px;
+  width: 300px;
+  left: 42%;
+  top: 5%;
+}
+
