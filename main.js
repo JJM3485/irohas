@@ -58,10 +58,6 @@ function on(){
   PrintText(IROHATEXT1[i]["TEXT1"]);
 }
 
-function likepoint(){
-  $('.like').text(point);
-}
-
 $(".gamebox").on('click', function() {
   i++;
   PrintText(IROHATEXT1[i]["TEXT1"]);
@@ -72,23 +68,27 @@ $(".gamebox").on('click', function() {
     $('.selectbox2').show();
     $('.selectbox2').text(SELECTTEX[j]["select2"]);
     j++;
-    $('.selectbox1').on('click', function() {
-      point = point + 10;
-      likepoint();
-      $('.selectbox1').hide();
-      $('.selectbox2').hide();
-      $('.wall').hide();
-    });
-    $('.selectbox2').on('click', function() {
-      point = point - 10;
-      likepoint();
-      $('.selectbox1').hide();
-      $('.selectbox2').hide();
-      $('.wall').hide();
-    });
   }
 });
 
+$('.selectbox1').on('click', function() {
+  point = point + 10;
+  console.log(point);
+  $('.like').text(point);
+  const laughsound = new Audio('./laugh.mp3');
+  laughsound.play();
+  $('.selectbox1').hide();
+  $('.selectbox2').hide();
+  $('.wall').hide();
+});
+
+$('.selectbox2').on('click', function() {
+  point = point - 10;
+  $('.like').text(point);
+  $('.selectbox1').hide();
+  $('.selectbox2').hide();
+  $('.wall').hide();
+});
 
 
 $('.gamebox').hide();
@@ -97,7 +97,7 @@ $('.btn').on('click', function() {on()});
 
 $('.ch').attr('src','./ch1.png');
 
-likepoint();
+$('.like').text(point);
 
 $('.selectbox1').hide();
 
