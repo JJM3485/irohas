@@ -16,6 +16,8 @@ let i = 0; //대화
 let j = 0; //선택지
 let point = 100; //호감도
 
+
+
 const $conversation = $(".conversation");
 
 function typeCharacter() {
@@ -46,6 +48,10 @@ export function playSound(name,vol,loop = false) {
   return audio;
 }
 const PS = playSound("backsound.mp3",0.5);
+const PS2 = playSound("inclass.mp3",0.5);
+const datesound = playSound("date.mp3",0.5);
+PS2.pause();
+datesound.pause();
 
 
 function on(){
@@ -54,7 +60,7 @@ function on(){
   $('.gamebox').show();
   $('.middle').hide();
   PS.pause();
-  const PS2 = playSound("inclass.mp3",0.5);
+  PS2.play();
   PrintText(IROHATEXT1[i]["TEXT1"]);
 }
 
@@ -73,7 +79,6 @@ $(".gamebox").on('click', function() {
 
 $('.selectbox1').on('click', function() {
   point = point + 10;
-  console.log(point);
   $('.like').text(point);
   const laughsound = new Audio('./laugh.mp3');
   laughsound.play();
@@ -90,6 +95,15 @@ $('.selectbox2').on('click', function() {
   $('.wall').hide();
 });
 
+$('.gamebox').on('click',function() {
+  if (IROHATEXT1[i]["chacter"] == true) {
+    PS2.pause();
+    datesound.play();
+    $('.gamebox').css('background-image',"url('./datesite.png')")
+    $('.ch').attr('src','./ch2.png');
+  }
+});
+
 
 $('.gamebox').hide();
 
@@ -104,3 +118,5 @@ $('.selectbox1').hide();
 $('.selectbox2').hide();
 
 $('.wall').hide();
+
+// 이미지 변경 및 배경 사진 변경
