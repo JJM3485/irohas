@@ -50,12 +50,15 @@ export function playSound(name,vol,loop = false) {
 const PS = playSound("backsound.mp3",0.5);
 const PS2 = playSound("inclass.mp3",0.5);
 const datesound = playSound("date.mp3",0.5);
+const dinersound = playSound("diner.mp3",0.5);
+const gamesound = playSound("gamecenter.mp3",0.5);
 PS2.pause();
 datesound.pause();
-
+dinersound.pause();
+gamesound.pause();
+const onsound = new Audio('./clicksound.mp3');
 
 function on(){
-  const onsound = new Audio('./clicksound.mp3');
   onsound.play();
   $('.gamebox').show();
   $('.middle').hide();
@@ -78,6 +81,7 @@ $(".gamebox").on('click', function() {
 });
 
 $('.selectbox1').on('click', function() {
+  onsound.play();
   point = point + 10;
   $('.like').text(point);
   const laughsound = new Audio('./laugh.mp3');
@@ -88,6 +92,7 @@ $('.selectbox1').on('click', function() {
 });
 
 $('.selectbox2').on('click', function() {
+  onsound.play();
   point = point - 10;
   $('.like').text(point);
   $('.selectbox1').hide();
@@ -96,12 +101,23 @@ $('.selectbox2').on('click', function() {
 });
 
 $('.gamebox').on('click',function() {
-  if (IROHATEXT1[i]["chacter"] == true) {
+  if (IROHATEXT1[i]["chacter"] == "1") {
     PS2.pause();
     datesound.play();
     $('.gamebox').css('background-image',"url('./datesite.png')")
     $('.ch').attr('src','./ch2.png');
   }
+  if (IROHATEXT1[i]["chacter"] == "2") {
+    datesound.pause();
+    dinersound.play();
+    $('.gamebox').css('background-image',"url('./dinersite.png')")
+  }
+  if (IROHATEXT1[i]["chacter"] == "3") {
+    dinersound.pause();
+    gamesound.play();
+    $('.gamebox').css('background-image',"url('./gamesite.png')")
+  }
+
 });
 
 
