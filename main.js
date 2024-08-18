@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import {IROHATEXT1,SELECTTEX} from "./irohatext"
+import {IROHATEXT1,SELECTTEX,GOODENDING,NORMALENDING} from "./irohatext"
 
 //선택지
 let choicecheck;      //선택지 골랐는지 확인
@@ -52,10 +52,13 @@ const PS2 = playSound("inclass.mp3",0.5);
 const datesound = playSound("date.mp3",0.5);
 const dinersound = playSound("diner.mp3",0.5);
 const gamesound = playSound("gamecenter.mp3",0.5);
+const moviesound = playSound("cinema.mp3",0.5);
 PS2.pause();
 datesound.pause();
 dinersound.pause();
 gamesound.pause();
+moviesound.pause();
+
 const onsound = new Audio('./clicksound.mp3');
 
 function on(){
@@ -117,7 +120,11 @@ $('.gamebox').on('click',function() {
     gamesound.play();
     $('.gamebox').css('background-image',"url('./gamesite.png')")
   }
-
+  if (IROHATEXT1[i]["chacter"] == "4") {
+    gamesound.pause();
+    moviesound.play();
+    $('.gamebox').css('background-image',"url('./moviesite.png')")
+  }
 });
 
 

@@ -47,9 +47,29 @@ export const IROHATEXT1 = [
 
     {"TEXT1":"우리는 다음으로 게임센터에 가기로 했다.","select":false,"chacter":"0"},
 
-    {"TEXT1":"게임센터","select":false,"chacter":"3"},
+    {"TEXT1":"게임센터에 도착한 우리는 무엇을 할지 둘러보았다.","select":false,"chacter":"3"},
 
-    {"TEXT1":"게임센터2","select":false,"chacter":"0"},
+    {"TEXT1":"잠시 돌아다니다 본 그곳에는 인형뽑기가 있었다.","select":false,"chacter":"0"},
+
+    {"TEXT1":"이로하는 그 안에 있는 인형을 쳐다보고 있다.","select":false,"chacter":"0"},
+
+    {"TEXT1":"가지고 싶어하는 기분이었다.","select":false,"chacter":"0"},
+
+    {"TEXT1":"그래서 나는 그 인형을...","select":true,"chacter":"0"},
+
+    {"TEXT1":"게임센터에서 할 것은 다하였으니 마지막으로 영화를 보기로 했다.","select":false,"chacter":"0"},
+
+    {"TEXT1":"영화관에 도착한 우리는 먼저 팝콘와 음료를 주문했다.","select":false,"chacter":"4"},
+
+    {"TEXT1":"주문이 완료되었고 나오는 동안 영화를 예매하기로 했다.","select":false,"chacter":"0"},
+
+    {"TEXT1":"우리는 로맨스와 판타지 영화 중...","select":true,"chacter":"0"},
+
+    {"TEXT1":"그렇게 우리는 영화를 보며 시간을 보냈다.","select":false,"chacter":"0"},
+
+    {"TEXT1":"영화를 다 보니 시간이 많이 늦었다.","select":false,"chacter":"0"},
+
+    {"TEXT1":"우리는 데이트를 이제 끝내기로 했다.","select":false,"chacter":"0"},
 ]
 
 
@@ -59,4 +79,14 @@ export const SELECTTEX = [
     {"select1":"데려다준다.", "select2":"그냥 집으로 간다."},
     {"select1":"예쁘다고 칭찬한다.", "select2":"아무말도 하지 않는다."},
     {"select1":"먹는다.", "select2":"먹지 않는다."},
+    {"select1":"뽑아준다.", "select2":"돈아깝다."},
+    {"select1":"로맨스를 본다.", "select2":"판타지를 본다."},
+]
+
+export const GOODENDING = [
+    {"goodtext":"홍차를 먹는다."},
+]
+
+export const NORMALENDING = [
+    {"normaltext":"홍차를 먹는다."},
 ]
