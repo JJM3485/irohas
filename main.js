@@ -15,7 +15,7 @@ let skiptext=false
 let i = 0; //대화
 let j = 0; //선택지
 let point = 100; //호감도
-
+let k = 0;
 
 
 const $conversation = $(".conversation");
@@ -71,16 +71,30 @@ function on(){
 }
 
 $(".gamebox").on('click', function() {
-  i++;
-  PrintText(IROHATEXT1[i]["TEXT1"]);
-  if (IROHATEXT1[i]["select"] == true){
-    $('.wall').show();
-    $('.selectbox1').show();
-    $('.selectbox1').text(SELECTTEX[j]["select1"]);
-    $('.selectbox2').show();
-    $('.selectbox2').text(SELECTTEX[j]["select2"]);
-    j++;
+  if (IROHATEXT1[i]["end"] == "0") {
+    i++;
+    PrintText(IROHATEXT1[i]["TEXT1"]);
+    if (IROHATEXT1[i]["select"] == true){
+      $('.wall').show();
+      $('.selectbox1').show();
+      $('.selectbox1').text(SELECTTEX[j]["select1"]);
+      $('.selectbox2').show();
+      $('.selectbox2').text(SELECTTEX[j]["select2"]);
+      j++;
+    }
   }
+
+  if (IROHATEXT1[i]["end"] == "1")
+    {
+      if (point <= 150) {
+        PrintText(NORMALENDING[k]["normaltext"]);
+        k++;
+      }
+      else if (point > 150) {
+        PrintText(GOODENDING[k]["goodtext"]);
+        k++;
+      }
+    }
 });
 
 $('.selectbox1').on('click', function() {
@@ -125,7 +139,16 @@ $('.gamebox').on('click',function() {
     moviesound.play();
     $('.gamebox').css('background-image',"url('./moviesite.png')")
   }
+  if (IROHATEXT1[i]["chacter"] == "5") {
+    moviesound.pause();
+    PS2.play();
+    $('.gamebox').css('background-image',"url('./classroom.jpg')")
+    $('.ch').attr('src','./ch1.png');
+  }
 });
+
+
+
 
 
 $('.gamebox').hide();
